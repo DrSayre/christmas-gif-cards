@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender: one
+  name: MyText
+  address: MyText
+  city: MyText
+  state: MyText
+  zip: MyText
+  comment: MyText
+
+two:
+  sender: two
+  name: MyText
+  address: MyText
+  city: MyText
+  state: MyText
+  zip: MyText
+  comment: MyText

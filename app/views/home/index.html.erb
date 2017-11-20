@@ -1,0 +1,85 @@
+<!-- Page Wrapper -->
+<div id="page-wrapper">
+  <!-- Header -->
+  <header id="header" class="alt">
+    <h1><a href="index.html">Christmas GIF Cards</a></h1>
+  </header>
+  <!-- Banner -->
+  <section id="banner">
+    <div class="inner">
+      <h2>Christmas Gif Cards</h2>
+      <p>Send a Christmas card with a gif<br />
+      to Friends and family<br />
+      without having having to leave your house.</p>
+      <ul class="actions">
+        <li><a href="/cards/new" class="button special">Send a card now for $2.99</a></li>
+      </ul>
+    </div>
+    <a href="#one" class="more scrolly">Learn More</a>
+  </section>
+  <!-- One -->
+  <section id="one" class="wrapper style1 special">
+    <div class="inner">
+      <header class="major">
+        <h2>Send a physical Christmas card to anybody</h2>
+        <p>You can send the card with a custom message and include a QR code to a gif with the card.<br />
+        </p>
+      </header>
+      <%= image_tag 'santa_claus.gif' %>
+    </div>
+  </section>
+  <!-- Two -->
+  <section id="two" class="wrapper alt style2">
+    <section class="spotlight">
+      <div class="image"><%= image_tag "pic01.jpg" %></div>
+      <div class="content">
+        <h2>Gif</h2>
+        <p>Submit a gif with your card and we will include a QR code for the card recipiant to view the gift you submitted.</p>
+      </div>
+    </section>
+    <section class="spotlight">
+      <div class="image"><%= image_tag "pic02.jpg" %></div>
+      <div class="content">
+        <h2>Custom Message</h2>
+        <p>You can include a message, up to 220 characters, to go with the card.</p>
+      </div>
+    </section>
+    <section class="spotlight">
+      <div class="image"><%= image_tag "pic03.jpg" %></div>
+      <div class="content">
+        <h2>We take care of the rest!</h2>
+        <p>We will put together the card and mail it. You can cross something off your Holiday to-do list.</p>
+      </div>
+    </section>
+  </section>
+  <!-- CTA -->
+  <section id="cta" class="wrapper style4">
+    <div class="inner">
+      <header>
+        <h2>Send a Card Now!</h2>
+        <p>Only takes a few minutes. Send card before 10 PM to guarantee card is in tomorrow's mail.</p>
+      </header>
+      <ul class="actions vertical">
+        <li><a href="/cards/new" class="button fit special">Send Card</a></li>
+      </ul>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer id="footer">
+    <%= image_tag 'merry_christmas.gif' %><br>
+    Special thanks to <a href='https://unsplash.com/@lesanderson'>Les Anderson</a>, <a href='https://unsplash.com/@anniespratt'>Annie Spratt</a>, <a href='https://unsplash.com/@arunkuchibhotla'>Arun Kuchibhotla</a>, and <a href='https://unsplash.com/@mikearney'>Mike Arney</a> for pictures.<br />
+    Contact <%= mail_to "caleb@christmasgifcards.com" %> for help, questions, comments, etc.
+    <ul class="copyright">
+      <li>&copy; 2017 Christmas Gif Cards</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </footer>
+</div>
+
+<!-- Scripts -->
+<%= javascript_include_tag 'jquery.min' %>
+<%= javascript_include_tag 'jquery.scrollex.min' %>
+<%= javascript_include_tag 'jquery.scrolly.min' %>
+<%= javascript_include_tag 'skel.min' %>
+<%= javascript_include_tag 'util' %>
+<!--[if lte IE 8]><%= javascript_include_tag 'ie/respond.min' %><![endif]-->
+<%= javascript_include_tag 'main' %>

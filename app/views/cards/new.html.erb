@@ -1,0 +1,101 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Christmas GIF Cards</span>
+</nav>
+<% if flash[:notice] %>
+  <div class="alert alert-primary" role="alert">
+    <p class='h3'><strong><%= flash[:notice] %></strong></p>
+  </div>
+<% end %>
+<div class='container-fluid'>
+  <h2>Your Information</h2>
+  <%= form_with scope: @sender, url: cards_path, local: true do |sender| %>
+    <div class='form-group'>
+      <%= label_tag do %>
+        Your Name
+        <%= sender.text_field :name, class: 'form-control' %>
+      <% end %>
+    </div>
+    <div class='form-group'>
+      <%= label_tag do %>
+        Your Email
+        <%= sender.text_field :email, class: 'form-control' %>
+      <% end %>
+    </div>
+    <div class='form-group'>
+      <%= label_tag do %>
+        Your Address
+        <%= sender.text_field :address, class: 'form-control' %>
+      <% end %>
+    </div>
+    <div class='form-group'>
+      <%= label_tag do %>
+        Your City
+        <%= sender.text_field :city, class: 'form-control' %>
+      <% end %>
+    </div>
+    <div class='form-group'>
+      <%= label_tag do %>
+        Your State
+        <%= sender.select :state, options_for_select(us_states), class: 'form-control' %>
+      <% end %>
+    </div>
+    <div class='form-group'>
+      <%= label_tag do %>
+        Your Zip
+        <%= sender.text_field :zip, class: 'form-control' %>
+      <% end %>
+    </div>
+    <h2>Their Information</h2>
+    <%= sender.fields_for :cards do |card| %>
+      <div class='form-group'>
+        <%= label_tag do %>
+          Their Name
+          <%= card.text_field :name, class: 'form-control' %>
+        <% end %>
+      </div>
+      <div class='form-group'>
+        <%= label_tag do %>
+          Their Address
+          <%= card.text_field :address, class: 'form-control' %>
+        <% end %>
+      </div>
+      <div class='form-group'>
+        <%= label_tag do %>
+          Their City
+          <%= card.text_field :city, class: 'form-control' %>
+        <% end %>
+      </div>
+      <div class='form-group'>
+        <%= label_tag do %>
+          Their State
+          <%= card.select :state, options_for_select(us_states), class: 'form-control' %>
+        <% end %>
+      </div>
+      <div class='form-group'>
+        <%= label_tag do %>
+          Their Zip
+          <%= card.text_field :zip, class: 'form-control' %>
+        <% end %>
+      </div>
+      <h2>Comment and Gif</h2>
+      <div class='form-group'>
+        <%= label_tag do %>
+          Comment (220 maximum characters)
+          <%= card.text_area :comment, class: 'form-control', maxlength: 220 %>
+        <% end %>
+      </div>
+      <div class='form-group'>
+        <%= label_tag do %>
+          GIF
+          <%= card.file_field :gif, multiple: true %>
+        <% end %>
+      </div>
+    <% end %>
+    <script src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="ChristmasGIFCards.com"
+          data-locale="auto"
+          data-label="Send Card"></script>
+  <% end %>
+</div>

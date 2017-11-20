@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Card has been sent!</h1>
+    <h2>From:</h2>
+    <%= @sender.name %><br />
+    <%= @sender.email %><br />
+    <%= @sender.address %><br />
+    <%= @sender.city %>, <%= @sender.state %> <%= @sender.zip %><br />
+
+    <h2>To:</h2>
+    <%= @card.name %><br />
+    <%= @card.address %><br />
+    <%= @card.city %>, <%= @card.state %> <%= @card.zip %><br />
+
+    Comment: <%= @card.comment %><br />
+    <% unless @card.gif[0].nil? %>
+      GIF: https://s3.amazonaws.com/christmas-gif-cards/<%= @card.gif[0].url %><br />
+    <% end %>
+  </body>
+</html>

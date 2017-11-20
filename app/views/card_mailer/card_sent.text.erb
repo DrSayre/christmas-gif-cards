@@ -1,0 +1,16 @@
+Card has been sent!
+===================
+From:
+  <%= @sender.name %>
+  <%= @sender.email %>
+  <%= @sender.address %>
+  <%= @sender.city %>, <%= @sender.state %> <%= @sender.zip %>
+To:
+  <%= @card.name %>
+  <%= @card.address %>
+  <%= @card.city %>, <%= @card.state %> <%= @card.zip %>
+
+  Comment: <%= @card.comment %>
+  <% unless @card.gif[0].nil? %>
+  GIF: https://s3.amazonaws.com/christmas-gif-cards/<%= @card.gif[0].url %>
+  <% end %>
