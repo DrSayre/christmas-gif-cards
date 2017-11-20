@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20171119175602) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: :cascade do |t|
-    t.integer "sender_id"
+    t.bigint "sender_id"
     t.text "name"
     t.text "address"
     t.text "city"
@@ -37,4 +40,5 @@ ActiveRecord::Schema.define(version: 20171119175602) do
     t.text "email"
   end
 
+  add_foreign_key "cards", "senders"
 end
